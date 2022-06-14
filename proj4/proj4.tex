@@ -1,0 +1,111 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{times}
+\usepackage[left=2cm, top=3cm, text={17cm,24cm}]{geometry}
+\usepackage{color}
+\usepackage[unicode]{hyperref}
+\usepackage{url}
+\DeclareUrlCommand\url{\def\UrlLeft{<}\def\UrlRight{>} \urlstyle{tt}}
+\title{proj4}
+\author{xmarek75}
+\date{April 2021}
+
+\begin{document}
+
+
+
+\begin{titlepage}
+
+\begin{center}
+\Huge
+\textsc{Vysoké učení technické v~Brně\\
+\huge
+Fakulta informačních technologií} \\
+\vspace{\stretch{0.25}}
+
+\LARGE
+Typografie a publikování\,--\,4.~projekt \\
+\Huge
+Bibliografické citace
+\vspace{\stretch{0.4}}
+\end{center}
+
+{\Large \today \hfill
+Pavel Marek }
+\end{titlepage}
+\section*{Předmluva}
+Tento dokument byl vytvořen za účelem splnění projektu do předmětu ITY.\\
+Projekt se týká Bibliografických citací.
+\subsection*{Pojem \emph{Bibliografické citace}}
+Jedná se o~souhrn údajů vztahujících se k~citované publikaci nebo části této publikace. Bibliografická citace slouží k~identifikaci citované publikace.
+Autor každé odborné publikace musí dle autorského zákona uvést zdroje, ze kterých čerpal podklady pro obsah své publikace. Více o bibliografických citací v \cite{Pysny}
+\section{Úvod do systému {\LaTeX}}
+\subsection{Definice}
+{\LaTeX} je typografickým systémem, který je určen k sazbě vědeckých a~matematických dokumentů vysoké typografické kvality. Systém je rovněž vhodný pro tvorbu všech možných druhů jiných dokumentů, od jednoduchých dopisů po složité knihy. Systém {\LaTeX} je postaven na typografickém formátovacím programu {\TeX} Donalda~E.~Knutha. Více o~historii a~filosofii v \cite{Oetiker}
+\subsection{Proč je dobré používat \LaTeX}
+V článku \cite{Simecek}, vyzdvihuje autor jako hlavní důvod proč používat {\LaTeX} jeho "neomezenost", v {\LaTeX}u máme možnost nadefinovat si přesně to, co chceme.
+Velkou výhodou je i to, že \LaTeX je zdarma na rozdíl od některých komerčních produktů, za něž se musí platit vysoké částky.\\
+V časopise EdTech KISK \cite{Davidek} zase považuje autor za největší výhodu jeho výstupy (tedy pdf soubory připravené pro tisk), že jsou po estetické, tak i~po typografické stránce na výrazněji profesionálnější úrovni než například MS Word. Jde například o kontrasty a velikosti mezer napříč jednotlivými nadpisy, zalomení řádků, odstavců, stránek atd.  
+\subsection{Práce v {\LaTeX}u}
+Tvorba dokumentů pomocí {\LaTeX}u připomíná programovaní podobné HTML.\\
+Podle \cite{Rybicka} je složeno ze tří hlavních částí:
+\begin{itemize}
+    \item psaní a úprava zdrojového textu
+    \item překlad\,-\,vysázení 
+    \item prohlížení
+\end{itemize}
+\subsection{Struktura dokumentu}
+{\large Základní formát dokumentu:}\\
+\verb|\documentclass[volby]{styl}|\\
+ \dots \textcolor{blue}{preambule}\\
+ \verb|\begin{document}|\\
+ \dots \textcolor{blue}{textová část}\\
+ \verb|\end{document}|
+ \begin{itemize}
+     \item \textbf{Styl} – Definuje styl sazby, jakým má být dokument vypracován.
+     \item \textbf{Volby} – Volitelné parametry,umožňují modifikovat vlastnosti stylu.
+     \item \textbf{Preambule} – V~preambuli, se nacházejí příkazy, jejichž platnost se vztahuje k~celému textu.
+     \item \textbf{Textová část} – Textová část dokumentu obsahuje text a~příkazy, které ovlivňují formátování a~způsob zobrazení textu.
+ \end{itemize}
+ Více o tom, co obsahují jednotlivé části v \cite{Benes}
+ 
+\subsection{Příkazy}
+Klíčovou roli mají příkazy, jimiž řídíte celou sazbu. Příkaz vždy začíná
+zpětným lomítkem. Podle toho, co následuje, se dělí do dvou kategorií:
+\begin{itemize}
+    \item \textbf{Řídící slova} jsou tvořena libovolně dlouhou posloupností písmen
+    Jako příklad může posloužit příkaz \verb|\TeX|, který
+vysází logo \TeX. Řídicí slovo končí prvním nepísmenným znakem.
+    \item \textbf{Řídící znaky} obsahují jediný nepísmenný znak. Například \verb|\#|, kterým se sází znak „\#“, je řídicí znak.
+\end{itemize}
+Více o příkazech v \cite{Satrapa}
+\subsection{Matematické formuly}
+V knize \emph{A Guide to \LaTeX{} and Electronic Publishing}\cite{Kopka} popisují matematiku jako "duši" systému \TeX. Protože sazba matematických zápisů je v normálním tisku velmi komplikovaná, ještě více komplikovaná byla na psacím stroji.
+A~proto Donald Knuth vytvořil svůj vlastní formátovací jazyk.
+\subsubsection{Matematické prostředí}
+Pro sazbu matematiky používá {\TeX} zvláštní mód\,–\,matematický. Tento mód
+se dělí na matematický textový a matematický vysazený. Více v \cite{Wyrwolova}
+\subsection{Vkládání obrázků}
+Pro práci s obrázky je vhodné vyvolat balíček \texttt{graphicx}, tzn. v~preambuli dokumentu napsat\\*  {\verb|\usepackage|\verb|{graphicx}|}. U~tohoto balíčku můžeme navolit parametry typu \texttt{pdftex}, \texttt{dvips}, aj., což jsou ovladače pro překladače {\LaTeX} a PDF{\LaTeX} (a~další), a~které umožňují  vytvářet dokumenty ve~zvoleném formátu. Více o překladačích v \cite{Polasek}.\\*
+Při vkládání obrázku je dobré zvolit vhodné parametry:
+\begin{itemize}
+    \item \textbf{angle}\,-\,natočení obrázku o libovolný počet stupňů, a to v kladném i záporném směru
+    \item \textbf{height}\,-\,nastavení výšky obrázku
+    \item \textbf{width}\,-\,nastavení šířky obrázku
+    \item \textbf{scale}\,-\,změna velikosti obrázku poměrně ke stranám, výsledná velikost bude násobkem zadané hodnoty a původní velikosti
+    \item \textbf{type}\,-\,definice typu vstupního souboru, nebude brán zřetel na příponu souboru s obrázkem
+\end{itemize}
+Jednotlivé parametry oddělujeme mezi sebou čárkou a hodnoty přiřazujeme rovnítkem, například.:\\
+\verb|angle=-45, height=7cm, width=35mm|\\
+Podrobnější popis parametrů v \cite{Svamberg}.
+
+
+
+    
+\newpage
+    \bibliographystyle{czechiso}
+	\renewcommand{\refname}{Literatura}
+	\bibliography{proj4}
+
+\end{document}
